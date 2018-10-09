@@ -40,9 +40,9 @@ public class Player extends SuperObject
                 shotInterval = 1;
                 for(int k = -8; k <= 8; k += 16)
                     if((tmp = p.shoots.getEmpty()) != null)
-                        tmp.setData(px + (double)k, py, 0.0D, -24D, 16, 0, 0, 0, color);  //·¢Éä×Óµ¯
+                        tmp.setData(px + (double)k, py, 0.0D, -24D, 16, 0, 0, 0, color);  //å‘å°„å­å¼¹
 
-                if(color == 'w')							//Î×Å®
+                if(color == 'w')							//å·«å¥³
                 {
                     int i = 21;
                     if(power < 400)
@@ -53,7 +53,7 @@ public class Player extends SuperObject
                         i = 3;
                     if(power < 100)
                         i = 0;
-                    byte byte0;							//°´×¡shift£¬¾Û¼¯×Óµ¯
+                    byte byte0;							//æŒ‰ä½shiftï¼Œèšé›†å­å¼¹
                     if(getkeys.shift)				
                     {
                         byte0 = 6;
@@ -68,7 +68,7 @@ public class Player extends SuperObject
                             p.Ashoot[p.shootNum].play();
                             }
                 } else
-                if(color == 'c')							//ç÷Â¶Åµ
+                if(color == 'c')							//çªéœ²è¯º
                 {
                 	
                     int j = 12;
@@ -80,7 +80,7 @@ public class Player extends SuperObject
                         j = 3;
                     if(power < 100)
                         j = 0;
-                    byte byte1;							//°´×¡shift£¬¾Û¼¯×Óµ¯
+                    byte byte1;							//æŒ‰ä½shiftï¼Œèšé›†å­å¼¹
                     if(getkeys.shift)				
                     {
                         byte1 = 6;
@@ -119,8 +119,8 @@ public class Player extends SuperObject
                     if((tmp2 = p.effects.getEmpty()) != null)
                         tmp2.setData(Math.random() * 640D, Math.random() * 640D, 0.0D, 0.0D, 101, 0, 8, 4, 'c');
             }
-            if((tmp = p.shoots.getEmpty()) != null)						//Ğ¡¹ÖÏû³ı
-            	tmp.setData(0, 0, 9999, 9999, 9999, 0, 0, 0, ' ');	//ÒÆ999ÏñËØ³ö±ß½ç£¬ºêÅĞ¶¨¶ÔÏóÏû³ı
+            if((tmp = p.shoots.getEmpty()) != null)						//å°æ€ªæ¶ˆé™¤
+            	tmp.setData(0, 0, 9999, 9999, 9999, 0, 0, 0, ' ');	//ç§»999åƒç´ å‡ºè¾¹ç•Œï¼Œå®åˆ¤å®šå¯¹è±¡æ¶ˆé™¤
             	
             for(int i2 = 0; i2 < p.bullets.getArrayMax(); i2++)
                 if((tmp = p.bullets.getObject(i2)).getExist())
@@ -136,12 +136,12 @@ public class Player extends SuperObject
             {
                 if(j2 >= p.bullets.getArrayMax())
                     break;
-                if((tmp = p.bullets.getObject(j2)).getExist() && (double)((size + tmp.getSize()) / 2) > Math.hypot(px - tmp.getPx(), py - tmp.getPy()))/////Íæ¼Ò±»»÷ÖĞÊÂ¼ş
+                if((tmp = p.bullets.getObject(j2)).getExist() && (double)((size + tmp.getSize()) / 2) > Math.hypot(px - tmp.getPx(), py - tmp.getPy()))/////ç©å®¶è¢«å‡»ä¸­äº‹ä»¶
                 {
                 	//TODO
-                	p.Acrash.play();												//Íæ¼Ò±»»÷ÖĞÒôĞ§
+                	p.Acrash.play();												//ç©å®¶è¢«å‡»ä¸­éŸ³æ•ˆ
                 	
-                    for(int k2 = 15; k2 < 375; k2 += 30)			//Íæ¼Ò±»»÷ÖĞĞ§¹û
+                    for(int k2 = 15; k2 < 375; k2 += 30)			//ç©å®¶è¢«å‡»ä¸­æ•ˆæœ
                         if((tmp2 = p.effects.getEmpty()) != null)
                             tmp2.setData(px, py, Math.cos(Math.toRadians(k2)) * 16D, Math.sin(Math.toRadians(k2)) * 16D, 0, 0, 4, 10, 'y');
 
@@ -182,7 +182,7 @@ public class Player extends SuperObject
 //            	tmp2.setData(px + vx, py + vy, 0.0D, 0.0D, 8, 0, 0, 0, 'b');
         }
         super.move();
-////////////////////////////////Íæ¼Ò³ö½ç¾ÀÕı/////////////////////////////////////////
+////////////////////////////////ç©å®¶å‡ºç•Œçº æ­£/////////////////////////////////////////
         	if(px < 20)
         		{px = 20;}
         	if(py < 20)
@@ -192,10 +192,10 @@ public class Player extends SuperObject
     		if(py > 620)
     			{py = 620;}
 ////////////////////////////////////////////////////////////////////////////////
-            if(frame < 360)							//×óĞ¡ºÚ
+            if(frame < 360)							//å·¦å°é»‘
                 st1b_l();
             else
-            if(frame < 660)							//ÓÒĞ¡ºÚ
+            if(frame < 660)							//å³å°é»‘
                 st1b_r();
             else
             if(frame >= 700)
@@ -238,7 +238,7 @@ public class Player extends SuperObject
                                 st1b_l();
                                 st1b_r();
                             } else
-     ///////////////////////////////////////´óboss³ö³¡/////////////////////////////
+     ///////////////////////////////////////å¤§bosså‡ºåœº/////////////////////////////
                             if(frame == 2900)
                             {
                                 p.enemys.allErase();
@@ -246,20 +246,20 @@ public class Player extends SuperObject
                                 tmp.setData(320D, 0.0D, 0.0D, 0.0D, 100, 0, 100, 2000, 'w');
                             }
             
-            System.out.println("µ±Ç°Ö¡Êı£º"+frame);
+            System.out.println("current frame:"+frame);
     }
 
-    private void st1b_l()									//×óĞ¡ºÚµ÷ÓÃ·½·¨
+    private void st1b_l()									//å·¦å°é»‘è°ƒç”¨æ–¹æ³•
     {
         if(frame % 30 == 0 && (tmp = p.enemys.getEmpty()) != null)
             tmp.setData(0.0D, Math.random() * 96D + 48D, 2D, 0.0D, 32, 0, 2, 3, 'h');
     }
-    private void st1g()										//àÛàÛàÛµ÷ÓÃ·½·¨
+    private void st1g()										//å™—å™—å™—è°ƒç”¨æ–¹æ³•
     {
         if(frame % 30 == 7 && (tmp = p.enemys.getEmpty()) != null)
             tmp.setData(Math.random() * 640D + 40D, 0.0D, 0.0D, 1.0D, 32, 0, 3, 10, 'p');
     }
-    private void st1b_r()									//ÓÒĞ¡ºÚµ÷ÓÃ·½·¨
+    private void st1b_r()									//å³å°é»‘è°ƒç”¨æ–¹æ³•
     {
         if(frame % 30 == 15 && (tmp = p.enemys.getEmpty()) != null)
             tmp.setData(640D, Math.random() * 96D + 48D, -2D, 0.0D, 32, 0, 2, 3, 'h');

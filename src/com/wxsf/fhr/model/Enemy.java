@@ -19,7 +19,7 @@ public class Enemy extends SuperObject
         if(!exist)
             return;
 
-        if(type == 2)											//Ğ¡ºÚ
+        if(type == 2)											//å°é»‘
         {
             if(frame % 25 == 0)
             {
@@ -29,7 +29,7 @@ public class Enemy extends SuperObject
             }
         } else
 
-        if(type == 3)											//àÛàÛàÛ
+        if(type == 3)											//å™—å™—å™—
         {
             if(frame % 15 == 0)
             {
@@ -40,7 +40,7 @@ public class Enemy extends SuperObject
             }
         } else
 
-        if(type == 100)										//´óboss
+        if(type == 100)										//å¤§boss
         {
             if(life > 1600)
             {
@@ -82,7 +82,7 @@ public class Enemy extends SuperObject
             }
         }
 
-        for(int j6 = 0; j6 < p.shoots.getArrayMax(); j6++)			//×²»÷
+        for(int j6 = 0; j6 < p.shoots.getArrayMax(); j6++)			//æ’å‡»
         {
             if(!(tmp = p.shoots.getObject(j6)).getExist()|| Math.hypot(px - tmp.getPx(), py - tmp.getPy()) >= (double)((size + tmp.getSize()) / 2))
                 continue;
@@ -100,11 +100,11 @@ public class Enemy extends SuperObject
         super.move();
         }
 
-    public void crash()						////////×²»÷ÊÂ¼ş
+    public void crash()						////////æ’å‡»äº‹ä»¶
     {
-        p.player.plusScore(type * 10);		//¼Ó·Ö
-        p.player.plusPower(type);			//¹¥»÷Á¦ÌáÉı
-        eraseWithEffect();					//µ±bossËÀÍöÊ±´ÓÆÁÄ»Çå³ı
+        p.player.plusScore(type * 10);		//åŠ åˆ†
+        p.player.plusPower(type);			//æ”»å‡»åŠ›æå‡
+        eraseWithEffect();					//å½“bossæ­»äº¡æ—¶ä»å±å¹•æ¸…é™¤
     }
 
 
